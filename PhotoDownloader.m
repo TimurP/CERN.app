@@ -76,12 +76,20 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[photo objectForKey:@"jpgIcon"]];
     NSData *thumbnailData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     UIImage *thumbnailImage = [UIImage imageWithData:thumbnailData];
+    
+    if (!thumbnailImage)
+      thumbnailImage = [UIImage imageNamed:@"image_not_found.png"];
+    
+    [self.thumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
+
+    /*
     if (thumbnailImage) {
         [self.thumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
     } else {
         NSLog(@"Error downloading thumbnail #%d, will try again.", index);
         [self downloadThumbnailForIndex:[NSNumber numberWithInt:index]];
     }
+    */
     
     if (self.thumbnails.count == self.urls.count)
         self.isDownloading = NO;
