@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700BB27C15FDD9CB0070C433 /* image_not_found.png in Resources */ = {isa = PBXBuildFile; fileRef = 700BB27B15FDD9CB0070C433 /* image_not_found.png */; };
 		E10055FB15C47B0300C3BC9F /* UIImage+SquareScaledImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E10055FA15C47B0300C3BC9F /* UIImage+SquareScaledImage.m */; settings = {COMPILER_FLAGS = " "; }; };
 		E12084A11577588200A81B87 /* RSSAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = E12084A01577588100A81B87 /* RSSAggregator.m */; settings = {COMPILER_FLAGS = " "; }; };
 		E12E489915A51AAE001ADC77 /* PhotoDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E489815A51AAD001ADC77 /* PhotoDownloader.m */; settings = {COMPILER_FLAGS = " "; }; };
@@ -187,6 +188,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700BB27B15FDD9CB0070C433 /* image_not_found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_not_found.png; sourceTree = "<group>"; };
 		E10055F915C47B0300C3BC9F /* UIImage+SquareScaledImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SquareScaledImage.h"; sourceTree = "<group>"; };
 		E10055FA15C47B0300C3BC9F /* UIImage+SquareScaledImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SquareScaledImage.m"; sourceTree = "<group>"; };
 		E120849F1577588100A81B87 /* RSSAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSAggregator.h; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 		E1F7B67B156EDC7C0092367F = {
 			isa = PBXGroup;
 			children = (
+				700BB27B15FDD9CB0070C433 /* image_not_found.png */,
 				E1B6924715D9913B00EC9AFA /* AQGridView.xcodeproj */,
 				E1A2F588157A03DF0010D672 /* Categories */,
 				E1D87E85159EE67B0051104C /* MWPhotoBrowser */,
@@ -877,6 +880,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700BB27C15FDD9CB0070C433 /* image_not_found.png in Resources */,
 				E1F7B695156EDC7C0092367F /* InfoPlist.strings in Resources */,
 				E1F7B69E156EDC7C0092367F /* MainStoryboard_iPhone.storyboard in Resources */,
 				E1F7B6A1156EDC7C0092367F /* MainStoryboard_iPad.storyboard in Resources */,
