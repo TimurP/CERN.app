@@ -220,12 +220,19 @@
     NSData *thumbnailData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     UIImage *thumbnailImage = [UIImage imageWithData:thumbnailData];
     int index = [self.recentWebcasts indexOfObject:webcast];
+    
+    if (!thumbnailImage)
+      thumbnailImage = [UIImage imageNamed:@"image_not_found.png"];
+    
+    [self.recentWebcastThumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
+    
+    /*
     if (thumbnailImage) {
         [self.recentWebcastThumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
     } else {
         NSLog(@"Error downloading thumbnail #%d, will try again.", index);
         [self downloadThumbnailForRecentWebcast:webcast];
-    }
+    }*/
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(webcastsParser:didDownloadThumbnailForRecentWebcastIndex:)]) {
         [self performSelectorOnMainThread:@selector(informDelegateOfRecentWebcastThumbnailDownloadForIndex:) withObject:[NSNumber numberWithInt:index] waitUntilDone:NO];
@@ -240,12 +247,19 @@
     NSData *thumbnailData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     UIImage *thumbnailImage = [UIImage imageWithData:thumbnailData];
     int index = [self.upcomingWebcasts indexOfObject:webcast];
+
+    if (!thumbnailImage)
+       thumbnailImage = [UIImage imageNamed:@"image_not_found.png"];
+
+    [self.upcomingWebcastThumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
+    
+    /*
     if (thumbnailImage) {
         [self.upcomingWebcastThumbnails setObject:thumbnailImage forKey:[NSNumber numberWithInt:index]];
     } else {
         NSLog(@"Error downloading thumbnail #%d, will try again.", index);
         [self downloadThumbnailForUpcomingWebcast:webcast];
-    }
+    }*/
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(webcastsParser:didDownloadThumbnailForUpcomingWebcastIndex:)]) {
         [self performSelectorOnMainThread:@selector(informDelegateOfUpcomingWebcastThumbnailDownloadForIndex:) withObject:[NSNumber numberWithInt:index] waitUntilDone:NO];
